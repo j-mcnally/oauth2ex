@@ -67,7 +67,6 @@ defmodule OAuth2Ex do
       ] |> join
 
       new_token = %{do_get_token(config, query_params) | refresh_token: token.refresh_token, storage: token.storage}
-      OAuth2Ex.Token.save!(new_token)
     else
       token
     end
